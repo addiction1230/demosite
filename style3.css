@@ -1,0 +1,878 @@
+/* 基本的なリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+  /* 全体フォントサイズを小さく */
+  body {
+    font-size: 0.9rem;
+  }
+
+  /* ナビゲーション */
+  .nav-button {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  /* 各セクション */
+  .concept2-text,
+  .concept2-list {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .services-container {
+    flex-direction: column;
+  }
+
+  .service-item {
+    margin-bottom: 20px;
+  }
+
+  .news-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* フッター */
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+
+  footer .logo {
+    max-width: 80px;
+  }
+}
+
+/* ボディ全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* レスポンシブ: 基本スタイル */
+header,
+.concept2,
+.services-container,
+.news-section {
+  display: flex;
+  flex-wrap: wrap;
+  /* 画面幅に応じて折り返し */
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #192F60;
+  padding: 20px;
+  position: relative;
+}
+
+header .logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.header-content {
+  flex: 1;
+}
+
+/* ロゴ画像を調整 */
+.logo-link {
+  display: block;
+  /* クリック範囲を画像全体に */
+  margin-bottom: 10px;
+  /* 下に少し余白を追加 */
+  text-decoration: none;
+  /* リンクの下線を削除 */
+}
+
+.logo-image {
+  width: 150px;
+  /* ロゴ画像の幅を設定（適宜調整） */
+  height: auto;
+  /* 縦横比を保持 */
+  display: block;
+  /* ブロック要素として表示 */
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    width: 100px;
+    /* 小さい画面での幅を調整 */
+  }
+}
+
+
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* ナビゲーションバー */
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* 横並びに配置 */
+  justify-content: flex-end;
+  /* 右揃え */
+  gap: 15px;
+  /* ボタン間のスペース */
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #fff;
+  color: #192F60;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s ease;
+  white-space: nowrap;
+  /* 文章が折り返されないようにする */
+}
+
+.nav-button:hover {
+  background-color: #777;
+  transform: translateY(-5px);
+  /* ホバー時に少し浮き上がる効果 */
+}
+
+nav a:active {
+  background-color: #333;
+  /* クリック時の色 */
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    /* 縦並びに変更 */
+    align-items: flex-start;
+    /* 左揃え */
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+    /* 縦方向の間隔を調整 */
+  }
+}
+
+/* ヘッダーの右端に配置するコンタクト部分 */
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 電話アイコンのスタイル */
+.phone-icon {
+  width: 24px;
+  /* アイコンのサイズ */
+  height: 24px;
+  display: block;
+}
+
+.phone-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* お問い合わせボタンの画像 */
+.contact-button-image {
+  width: 120px;
+  /* ボタン画像の幅を指定 */
+  height: auto;
+  /* 縦横比を維持 */
+  display: block;
+  /* 画像をボタン内で正しく表示 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* ホバー効果用 */
+}
+
+/* ホバー時の効果 */
+.contact-button-image:hover {
+  transform: scale(1.1);
+  /* 画像を少し拡大 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* 影を追加 */
+}
+
+@media (max-width: 768px) {
+  .contact-button-image {
+    width: 100px;
+    /* 小さい画面でボタンを少し縮小 */
+  }
+}
+
+/* 会社概要セクション */
+#about {
+  position: relative;
+  /* 背景画像の上にテキストを配置するために使用 */
+  background-image: url('fv-img01.jpg');
+  /* ここに背景画像のパスを指定 */
+  background-size: cover;
+  /* 画像をセクション全体に拡大縮小 */
+  background-position: center;
+  /* 画像を中央に配置 */
+  background-attachment: scroll;
+  /* スクロール時に背景を固定 */
+  color: white;
+  /* テキスト色を白に変更 */
+  padding: 50px 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  /* テキストに影をつけて見やすくする */
+  border-radius: 8px;
+  /* コーナーを少し丸める（オプション） */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* セクション全体に影をつける（オプション） */
+}
+
+/* ヘッダー */
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  background: white;
+}
+
+/* パラグラフ */
+#about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  background: white;
+}
+
+/* 企業コンセプト1セクション */
+#concept1 {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* コンセプトの全体配置 */
+.concept-container {
+  display: flex;
+  align-items: center;
+  /* 垂直方向で中央揃え */
+  gap: 20px;
+  /* 画像とテキストの間隔 */
+  flex-wrap: wrap;
+  /* 小さい画面では折り返し */
+}
+
+/* 画像部分 */
+.concept-image {
+  flex: 1;
+  text-align: center;
+}
+
+.concept-img {
+  width: 100%;
+  max-width: 400px;
+  /* 最大幅を設定 */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* テキスト部分 */
+.concept-text {
+  flex: 2;
+}
+
+.concept-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.concept-text p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .concept-container {
+    flex-direction: column;
+    /* 画像とテキストを縦に並べる */
+  }
+
+  .concept-image,
+  .concept-text {
+    text-align: center;
+    /* 中央揃え */
+  }
+}
+
+.concept-details {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.concept-details p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* 詳しく見るボタン */
+.concept-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.concept-button:hover {
+  background-color: #555;
+  transform: translateY(-3px);
+}
+
+.concept-button:active {
+  background-color: #111;
+}
+
+
+/* 背景画像を配置するセクション */
+#concept-background {
+  position: relative;
+  background-image: url('bg.jpg');
+  /* 画像のパスを指定 */
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  /* スクロール時に背景を固定 */
+  padding: 50px 20px;
+  color: #192F60;
+  text-align: center;
+ height: auto;
+   /*セクションの高さを設定 */
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+
+/* コンセプト2コンテナ */
+.concept2-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  border-radius: 8px;
+  overflow: hidden;/* 子要素がはみ出さない */
+  height: auto;/* 高さを自動調整 */
+  min-height: 100px;/* 最小高さを設定（必要なら） */
+}
+
+
+
+
+/* 左側のテキスト */
+.concept2-text {
+    flex: 1;
+    margin-right: 20px; /* リストとの間隔 */
+    padding-right: 80px;
+    text-align: left; /* 左揃えにする */
+}
+
+.concept2-text h2 {
+  color: #fff;
+  background: #192F60;
+}
+
+/* コンセプト2のリスト全体 */
+.concept2-list {
+  flex: 1;
+}
+
+.concept2-list ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  gap: 20px; /* リスト間の余白 */
+}
+
+.concept2-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px; /* 数字とテキストの間隔 */
+}
+
+.concept2-list h3 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.concept2-list div {
+  display: flex;
+  flex-direction: column; /* 見出しと文章を縦に並べる */
+  gap: 5px; /* 見出しと詳細文の間隔 */
+}
+
+.concept2-list h4 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #222;
+}
+
+.concept2-list p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* 各リスト項目の位置を調整 */
+.concept2-list li:nth-child(1) {
+  --index: 0;
+}
+
+.concept2-list li:nth-child(2) {
+  --index: 1;
+}
+
+.concept2-list li:nth-child(3) {
+  --index: 2;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .concept2-container {
+    flex-direction: column;
+  }
+
+  .concept2-list,
+  .concept2-text {
+    text-align: center;
+  }
+
+  .concept2-list ol {
+    padding-left: 0;
+  }
+
+  .concept2-list h3 {
+    font-size: 2rem;
+  }
+
+  .concept2-list p {
+    font-size: 0.9rem;
+  }
+}
+
+
+#concept-background .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#concept-background h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+#concept-background p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* 提供するサービスセクション */
+#services {
+  background-color: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+#services p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.service-item {
+  text-align: center;
+  flex: 1;
+}
+
+.service-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.service-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+
+
+
+/* 制作実績セクション */
+#portfolio {
+
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#portfolio p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+/* 制作実績アイテムを横に並べる */
+.portfolio-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.portfolio-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.portfolio-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.portfolio-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .portfolio-items {
+      flex-direction: column;
+      gap: 20px;
+  }
+}
+
+
+/* ニュースセクション全体 */
+#news {
+  background-image: url('blog_bg.jpg');
+  /* 背景画像を指定 */
+  background-size: cover;
+  /* 画像をセクション全体に拡大または縮小 */
+  background-position: center;
+  /* 画像を中央揃え */
+  background-repeat: no-repeat;
+  /* 画像を繰り返さない */
+  color: white;
+  /* テキスト色を白に変更 */
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-overlay {
+  background-color: rgba(255, 255, 255, 0.9); /* 白い背景と透過度 */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 立体感を出す影 */
+  max-width: 1200px; /* セクション全体に対する最大幅 */
+  margin: 0 auto; /* セクション中央に配置 */
+}
+
+/* 見出し */
+#news h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  /* 見出しのテキストに影を追加 */
+}
+
+/* ニュースコンテナ */
+.news-container {
+  grid-template-columns: 1fr; /* 初期では縦並び */
+  gap: 20px;
+  /* 各ニュースアイテムの間隔 */
+}
+
+/* 各ニュースアイテム */
+.news-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc; /* 下部にグレーの線を追加 */
+}
+
+/* 日付とリンクのコンテナ */
+.news-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 日付とニュースを左右に分ける */
+  gap: 10px;
+}
+
+/* 日付のデザイン */
+.news-date {
+  display: flex;
+  font-size: 0.9rem;
+  color: #888; /* グレーの色合い */
+  white-space: nowrap; /* 改行を防ぐ */
+}
+
+/* ニュースリンク */
+.news-link {
+  text-decoration: underline;
+  color: inherit; /* 元の色を維持 */
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.news-link:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* ニュース項目のホバー効果 */
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ニュース概要テキスト */
+.news-item p {
+  font-size: 1rem;
+  color: #000;
+}
+
+
+
+@media (max-width: 768px) {
+  #news {
+    background-size: contain;
+    /* 小さい画面では背景を収める */
+    background-position: top;
+  }
+
+}
+
+/* お問い合わせセクション */
+#contact-section {
+  background-image: url('contact01.jpg'); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像をセクション全体にフィットさせる */
+    background-position: center;
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* 連絡オプションのデザイン */
+.contact-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* アイテム間の間隔 */
+}
+
+/* 電話番号部分 */
+.phone-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.phone-number {
+  font-size: 1.5rem;
+  color: white;
+}
+
+
+/* お問い合わせボタン */
+.contact-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #20868A;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px); /* ホバー時に少し浮き上がる効果 */
+}
+
+.contact-button:active {
+  background-color: #003f7f;
+}
+
+
+
+/* フッター */
+footer {
+  background-color: #192F60;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
+}
+
+/* フッター内のコンテンツをフレックスボックスで配置 */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  /* 縦方向に並べる */
+  align-items: center;
+  /* 垂直中央揃え */
+  gap: 10px;
+  /* ロゴと住所の間にスペースを追加 */
+  margin-bottom: 10px;
+}
+
+/* フッターのロゴ画像 */
+.footer-logo-image {
+  width: 100px;
+  /* ロゴ画像の幅 */
+  height: auto;
+  /* 縦横比を維持 */
+  display: block;
+}
+
+/* 住所のスタイル */
+.footer-address {
+  text-align: center;
+}
+
+/* 住所の文字サイズ */
+.footer-address p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* コピーライトの文字 */
+footer p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .footer-logo-image {
+    width: 80px;
+    /* 小さい画面ではロゴを少し縮小 */
+  }
+
+  .footer-address p {
+    font-size: 0.9rem;
+    /* 住所の文字サイズを調整 */
+  }
+}
