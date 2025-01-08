@@ -161,7 +161,7 @@ nav ul li {
 }
 
 .nav-button:hover {
-  background-color: #777;
+  background-color: #eee;
   transform: translateY(-5px);
   /* ホバー時に少し浮き上がる効果 */
 }
@@ -198,12 +198,49 @@ nav a:active {
   /* アイコンのサイズ */
   height: 24px;
   display: block;
+  color: #000;
 }
 
 .phone-number {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #000;
+  color: #192F60;
+  color: #192F60 !important;
+  /* 強制的に黒色を適用 */
+}
+
+/* 電話番号と営業時間の全体スタイル */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* アイコンとテキストの間のスペース */
+}
+
+/* 電話番号と営業時間の詳細を縦に並べる */
+.phone-details {
+  display: flex;
+  flex-direction: column;
+  /* 縦に並べる */
+  line-height: 1.2;
+  /* 行間を少し狭くする */
+
+}
+
+/* 電話番号 */
+.phone-number {
+  color: black;
+  font-size: 1.2rem;
+  /* 大きめの文字サイズ */
+  font-weight: bold;
+}
+
+/* 営業時間 */
+.business-hours {
+  color: #666;
+  /* 灰色で控えめに表示 */
+  font-size: 0.9rem;
+  /* 小さめの文字サイズ */
 }
 
 /* お問い合わせボタンの画像 */
@@ -245,30 +282,160 @@ nav a:active {
   /* 画像を中央に配置 */
   background-attachment: scroll;
   /* スクロール時に背景を固定 */
-  color: white;
+  color: #192F60;
   /* テキスト色を白に変更 */
   padding: 50px 20px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  /* テキストに影をつけて見やすくする */
-  border-radius: 8px;
-  /* コーナーを少し丸める（オプション） */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  /* セクション全体に影をつける（オプション） */
+
 }
 
+/* ボタンを包むコンテナ */
+.about-buttons {
+  display: flex;
+  justify-content: space-between;
+  /* ボタンの間にスペースを入れる */
+  gap: 20px;
+  /* ボタン間のスペース */
+  margin-top: 20px;
+  /* セクションとの余白 */
+}
+
+/* 各ボタンの共通スタイル */
+.about-button {
+  display: block;
+  padding: 15px 20px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* ボタン全体を横並び */
+.about-buttons {
+  display: flex;
+  justify-content: flex-start;
+  /* 子要素を左詰め */
+  gap: 20px;
+  /* ボタン間の間隔 */
+  align-items: center;
+  gap: 15px;
+  /* ボタン間の間隔 */
+  margin-top: 20px;
+  /* 上部との余白 */
+}
+
+/* 電話・営業時間ボタンのスタイル */
+.phone-hours-button {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: left;
+  gap: 10px;
+  /* アイコンとテキストの間隔 */
+  text-decoration: none;
+  /* リンクの下線を消す */
+}
+
+/* アイコンのサイズ */
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* テキスト部分 */
+.phone-text {
+  display: flex;
+  flex-direction: column;
+  /* テキストを縦並びに */
+}
+
+/* 問い合わせボタンのスタイル */
+.inquiry-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 40px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.inquiry-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* 問い合わせボタン */
+.inquiry-button {
+  background-color: #20868A;
+
+}
+
+.inquiry-button:hover {
+  background-color: #192F60;
+}
+
+
 /* ヘッダー */
-#about h2 {
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  /* 縦に並べる */
+  align-items: flex-start;
+  /* 左詰め */
+  gap: 10px;
+  /* テキスト間の余白 */
+}
+
+.header-subtitle {
+  display: inline-block;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+}
+
+
+
+/*#about h2 */
+
+.header-title,
+.header-title2 {
+  display: inline;
   font-size: 2.5rem;
   margin-bottom: 15px;
   background: white;
+  font-style: normal;
+  line-height: 1.8;
+  /* 行間を1.8倍に調整 */
+  font-weight: normal;
+  width: 45%;
+}
+
+.header-title {
+  letter-spacing: 5px;
 }
 
 /* パラグラフ */
 #about p {
+  display: inline;
   font-size: 1.2rem;
   line-height: 1.8;
   background: white;
 }
+
+@media (max-width: 768px) {
+  .about-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 /* 企業コンセプト1セクション */
 #concept1 {
@@ -311,15 +478,35 @@ nav a:active {
 }
 
 .concept-text h2 {
+  display: flex;
+  justify-content: flex-end;
+  /*右（下）揃え*/
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #333;
+  background: #192F60;
+  color: #fff;
+  text-align: right;
 }
 
 .concept-text p {
+  display: flex;
+  align-items: flex-end;
+  /* 下揃え */
   font-size: 1.2rem;
   color: #555;
   line-height: 1.6;
+  justify-content: flex-end;
+  /*右（下）揃え*/
+}
+
+.highlight {
+  justify-content: flex-end;
+  /*右（下）揃え*/
+  font-size: 5rem;
+  font-weight: bold;
+  color: #000;
+  line-height: 1;
+  /* 行の高さを制御して崩れを防ぐ */
 }
 
 /* レスポンシブ対応 */
@@ -346,16 +533,18 @@ nav a:active {
   color: #555;
   margin-bottom: 15px;
   line-height: 1.6;
+  text-align: left;
 }
 
 /* 詳しく見るボタン */
 .concept-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 80px;
   font-size: 1rem;
-  color: white;
-  background-color: #333;
+  color: #192F60;
+  background-color: #fff;
   text-decoration: none;
+  border: 2px solid #192F60;
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -382,8 +571,8 @@ nav a:active {
   padding: 50px 20px;
   color: #192F60;
   text-align: center;
- height: auto;
-   /*セクションの高さを設定 */
+  height: auto;
+  /*セクションの高さを設定 */
   margin: 20px 0;
   overflow: hidden;
 }
@@ -394,11 +583,14 @@ nav a:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px;
+
   border-radius: 8px;
-  overflow: hidden;/* 子要素がはみ出さない */
-  height: auto;/* 高さを自動調整 */
-  min-height: 100px;/* 最小高さを設定（必要なら） */
+  overflow: hidden;
+  /* 子要素がはみ出さない */
+  height: auto;
+  /* 高さを自動調整 */
+  min-height: 100px;
+  /* 最小高さを設定（必要なら） */
 }
 
 
@@ -406,15 +598,35 @@ nav a:active {
 
 /* 左側のテキスト */
 .concept2-text {
-    flex: 1;
-    margin-right: 20px; /* リストとの間隔 */
-    padding-right: 80px;
-    text-align: left; /* 左揃えにする */
+  padding: 40px;
+  display: flex;
+  flex-direction: column; /* 要素を縦に並べる */
+  align-items: flex-start; /* 左寄せ */
+  flex: 1;
+  margin-right: 20px;
+  /* リストとの間隔 */
+  padding-right: 80px;
+  text-align: left;
+  /* 左揃えにする */
+  gap: 10px; /* 各要素間の余白 */
 }
 
 .concept2-text h2 {
+  display: inline;
   color: #fff;
   background: #192F60;
+  padding: 16px;
+  font-weight: normal;
+}
+
+.concept2-text p {
+  font-size: 1rem;
+}
+
+.concept2-text .extra-space {
+  display: inline-block;
+  padding-top: 80px; /* 必要に応じて調整 */
+  width: 70%;
 }
 
 /* コンセプト2のリスト全体 */
@@ -427,14 +639,17 @@ nav a:active {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* 縦方向に配置 */
-  gap: 20px; /* リスト間の余白 */
+  flex-direction: column;
+  /* 縦方向に配置 */
+  gap: 10px;
+  /* リスト間の余白 */
 }
 
 .concept2-list li {
   display: flex;
   align-items: flex-start;
-  gap: 15px; /* 数字とテキストの間隔 */
+  gap: 15px;
+  /* 数字とテキストの間隔 */
 }
 
 .concept2-list h3 {
@@ -445,8 +660,10 @@ nav a:active {
 
 .concept2-list div {
   display: flex;
-  flex-direction: column; /* 見出しと文章を縦に並べる */
-  gap: 5px; /* 見出しと詳細文の間隔 */
+  flex-direction: column;
+  /* 見出しと文章を縦に並べる */
+  gap: 5px;
+  /* 見出しと詳細文の間隔 */
 }
 
 .concept2-list h4 {
@@ -461,6 +678,8 @@ nav a:active {
   margin: 0;
   line-height: 1.5;
 }
+
+
 
 
 /* 各リスト項目の位置を調整 */
@@ -496,9 +715,72 @@ nav a:active {
   }
 
   .concept2-list p {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
 }
+
+/* リストを斜めに */
+/* コンセプト2のリスト全体 */
+.concept2-list ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* 各リスト項目 */
+.concept2-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px; /* 数字とテキストの間隔 */
+  transform: translate(calc(var(--index, 0) * -60px), calc(var(--index, 0) * 0px)); /* 斜めに配置 */
+}
+
+/* インデックスに応じた設定 */
+.concept2-list li:nth-child(1) {
+  --index: 0; /* 最初のリスト */
+}
+
+.concept2-list li:nth-child(2) {
+  --index: 1; /* 2番目のリスト */
+}
+
+.concept2-list li:nth-child(3) {
+  --index: 2; /* 3番目のリスト */
+}
+
+/* 数字部分 */
+.concept2-list h3 {
+  font-size: 5rem;
+  color: #eee;
+  margin: 0;
+}
+
+/* リスト内のコンテンツ */
+.concept2-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.concept2-list h4 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #192F60;
+  text-align: left;
+}
+
+.concept2-list p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  line-height: 1;
+  text-align: left;
+}
+
 
 
 #concept-background .overlay {
@@ -535,8 +817,12 @@ nav a:active {
 }
 
 #services h2 {
+  display: inline;
   font-size: 2.5rem;
   margin-bottom: 15px;
+  background: #192F60;
+  color: #fff;
+  padding: 8px;
 }
 
 #services p {
@@ -586,17 +872,30 @@ nav a:active {
 .portfolio-container {
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: space-between;
+}
+
+.portfolio-title {
+  display: flex;
+  justify-content: flex-end; 
 }
 
 #portfolio h2 {
+  display: inline-block;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  text-align: right;
+  background: #192F60;
+  color: #fff;
+  padding: 8px;
 }
 
 #portfolio p {
   font-size: 1.2rem;
   margin-bottom: 40px;
-  color: #666;
+  color: #192F60;
+  text-align: right;
+  font-size: 1rem;
 }
 
 /* 制作実績アイテムを横に並べる */
@@ -618,9 +917,11 @@ nav a:active {
 .portfolio-image {
   width: 100%;
   max-width: 300px;
-  height: auto;
+  height: 200px;
   border-radius: 8px;
   margin-bottom: 15px;
+  object-fit: cover;
+  /* アスペクト比を保ちつつ高さに合わせてトリミング */
 }
 
 .portfolio-item h3 {
@@ -634,11 +935,128 @@ nav a:active {
   color: #666;
 }
 
+/* ポートフォリオセクション */
+.portfolio-section {
+  overflow: hidden;
+  /* スライド範囲外を非表示 */
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #f9f9f9;
+  padding: 20px 0;
+}
+
+/* スライダー全体 */
+.portfolio-slider {
+  display: flex;
+  gap: 20px;
+  animation: slide-animation 30s linear infinite;
+}
+
+/* 各ポートフォリオ項目 */
+.portfolio-item {
+  flex: 0 0 30%;
+  /* 各項目を30%の幅に設定 */
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* アニメーション */
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ボタンコンテナ */
+.portfolio-buttons {
+  display: flex;
+  flex-direction: column;
+  /* 縦方向に並べる */
+  align-items: center;
+  /* ボタンを中央揃え */
+  margin-top: 20px;
+}
+
+/* ボタンスタイル */
+.portfolio-button {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 10px 0;
+  /* ボタン間の余白 */
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* "詳しく見る" ボタンのデザイン */
+.button-detailed {
+  color: #192F60;
+  background-color: #fff;
+  border: 2px solid #0056b3;
+  padding: 8px 96px;
+}
+
+.button-detailed:hover {
+  background-color: #0056b3;
+  border-color: #003d80;
+  transform: translateY(-3px);
+  /* ホバー時に少し浮き上がる */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* "他の事例はこちら" ボタンのデザイン */
+.button-more {
+  color: #333;
+  background-color: #F8F9FA;
+  border: 2px solid #CCC;
+}
+
+.button-more:hover {
+  background-color: #E9ECEF;
+  border-color: #999;
+  transform: translateY(-3px);
+  /* ホバー時に少し浮き上がる */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .portfolio-items {
-      flex-direction: column;
-      gap: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.portfolio-image {
+  height: 15vw;
+  /* ビューポート幅の15% */
+  max-height: 200px;
+  /* 最大高さ */
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .portfolio-button {
+    width: 90%;
+    /* ボタン幅を画面幅に合わせる */
   }
 }
 
@@ -662,26 +1080,24 @@ nav a:active {
 }
 
 .news-overlay {
-  background-color: rgba(255, 255, 255, 0.9); /* 白い背景と透過度 */
+  background-color: rgba(255, 255, 255, 0.9);
+  /* 白い背景と透過度 */
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 立体感を出す影 */
-  max-width: 1200px; /* セクション全体に対する最大幅 */
-  margin: 0 auto; /* セクション中央に配置 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* 立体感を出す影 */
+  max-width: 1200px;
+  /* セクション全体に対する最大幅 */
+  margin: 0 auto;
+  /* セクション中央に配置 */
 }
 
-/* 見出し */
-#news h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  /* 見出しのテキストに影を追加 */
-}
+
 
 /* ニュースコンテナ */
 .news-container {
-  grid-template-columns: 1fr; /* 初期では縦並び */
+  grid-template-columns: 1fr;
+  /* 初期では縦並び */
   gap: 20px;
   /* 各ニュースアイテムの間隔 */
 }
@@ -690,14 +1106,16 @@ nav a:active {
 .news-item {
   padding: 10px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #ccc; /* 下部にグレーの線を追加 */
+  border-bottom: 1px solid #ccc;
+  /* 下部にグレーの線を追加 */
 }
 
 /* 日付とリンクのコンテナ */
 .news-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 日付とニュースを左右に分ける */
+  justify-content: start;
+  /* 日付とニュースを左右に分ける */
   gap: 10px;
 }
 
@@ -705,14 +1123,17 @@ nav a:active {
 .news-date {
   display: flex;
   font-size: 0.9rem;
-  color: #888; /* グレーの色合い */
-  white-space: nowrap; /* 改行を防ぐ */
+  color: #888;
+  /* グレーの色合い */
+  white-space: nowrap;
+  /* 改行を防ぐ */
 }
 
 /* ニュースリンク */
 .news-link {
   text-decoration: underline;
-  color: inherit; /* 元の色を維持 */
+  color: inherit;
+  /* 元の色を維持 */
   display: block;
   font-size: 1rem;
   color: #555;
@@ -749,9 +1170,11 @@ nav a:active {
 
 /* お問い合わせセクション */
 #contact-section {
-  background-image: url('contact01.jpg'); /* 背景画像を設定 */
-    background-size: cover; /* 背景画像をセクション全体にフィットさせる */
-    background-position: center;
+  background-image: url('contact01.jpg');
+  /* 背景画像を設定 */
+  background-size: cover;
+  /* 背景画像をセクション全体にフィットさせる */
+  background-position: center;
   background-color: #f9f9f9;
   padding: 50px 20px;
   text-align: center;
@@ -766,6 +1189,7 @@ nav a:active {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #fff;
+  font-weight: normal;
 }
 
 /* 連絡オプションのデザイン */
@@ -773,14 +1197,17 @@ nav a:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* アイテム間の間隔 */
+  gap: 120px;
+  /* アイテム間の間隔 */
 }
 
 /* 電話番号部分 */
 .phone-contact {
   display: flex;
+  background: #fff;
   align-items: center;
   gap: 10px;
+  padding: 0 8px;
 }
 
 .phone-icon {
@@ -789,8 +1216,9 @@ nav a:active {
 }
 
 .phone-number {
+
   font-size: 1.5rem;
-  color: white;
+
 }
 
 
@@ -808,7 +1236,8 @@ nav a:active {
 
 .contact-button:hover {
   background-color: #0056b3;
-  transform: translateY(-5px); /* ホバー時に少し浮き上がる効果 */
+  transform: translateY(-5px);
+  /* ホバー時に少し浮き上がる効果 */
 }
 
 .contact-button:active {
